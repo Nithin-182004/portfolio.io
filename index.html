@@ -6,53 +6,65 @@
     <title>Nithin R | Portfolio</title>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
         }
 
         body {
             background-color: #f5f7fa;
-            color: #333;
+            color: #2c3e50;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
+        /* Navigation Bar */
         nav {
             background-color: #fff;
-            padding: 1rem 2rem;
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
         .nav-links a {
-            color: #666;
+            color: #2c3e50;
             text-decoration: none;
-            margin: 0 1rem;
+            margin: 0 1.2rem;
             font-size: 1.1rem;
+            font-family: 'Montserrat', sans-serif;
             text-transform: uppercase;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .nav-links a:hover {
             color: #ff4d4d;
+            transform: translateY(-2px);
         }
 
+        /* Hero Section */
         .hero {
             display: flex;
             justify-content: space-between;
             align-items: center;
             min-height: 100vh;
             padding: 0 5rem;
-            background-color: #f5f7fa;
+            background: linear-gradient(135deg, #f5f7fa 60%, #dfe4ea 100%);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero-content {
@@ -60,126 +72,146 @@
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
-            color: #333;
+            font-size: 3.8rem;
+            color: #2c3e50;
             margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.2;
         }
 
         .hero-content h1::before {
             content: '— HELLO';
             display: block;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #ff4d4d;
             margin-bottom: 0.5rem;
         }
 
         .hero-content p {
             font-size: 1.2rem;
-            color: #666;
+            color: #2c3e50;
             margin-bottom: 2rem;
         }
 
         .hero-content .download-btn {
             background-color: #ff4d4d;
             color: #fff;
-            padding: 0.8rem 2rem;
+            padding: 0.9rem 2.2rem;
             border-radius: 5px;
             text-decoration: none;
             font-size: 1.1rem;
-            transition: background-color 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .hero-content .download-btn:hover {
             background-color: #e03c3c;
+            transform: scale(1.05);
         }
 
         .hero-image img {
             max-width: 400px;
             height: auto;
-            border-radius: 10px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
+        /* Social Icons */
         .social-icons {
             position: fixed;
             bottom: 2rem;
             left: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         .social-icons a {
-            color: #666;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
+            color: #2c3e50;
+            font-size: 1.6rem;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .social-icons a:hover {
             color: #ff4d4d;
+            transform: scale(1.2);
         }
 
+        /* Scroll Down Indicator */
         .scroll-down {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
             writing-mode: vertical-rl;
-            color: #666;
+            color: #2c3e50;
             font-size: 0.9rem;
+            font-family: 'Montserrat', sans-serif;
             text-transform: uppercase;
+            animation: pulse 2s infinite;
         }
 
         .scroll-down::after {
             content: '';
             display: block;
             width: 2px;
-            height: 30px;
+            height: 35px;
             background-color: #ff4d4d;
             margin-top: 0.5rem;
             margin-left: auto;
             margin-right: auto;
         }
 
+        @keyframes pulse {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Section Styling */
         section {
-            padding: 4rem 5rem;
+            padding: 5rem 5rem;
             max-width: 1200px;
             margin: 0 auto;
+            animation: fadeIn 1s ease-out;
         }
 
         section h2 {
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 2rem;
+            font-size: 2.8rem;
+            color: #2c3e50;
+            margin-bottom: 2.5rem;
             text-align: center;
+            font-family: 'Montserrat', sans-serif;
             position: relative;
         }
 
         section h2::after {
             content: '';
-            width: 60px;
-            height: 4px;
+            width: 80px;
+            height: 5px;
             background-color: #ff4d4d;
             position: absolute;
-            bottom: -10px;
+            bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
         }
 
+        /* About Section */
         #about {
             background-color: #fff;
             border-radius: 15px;
-            padding: 3rem;
+            padding: 3.5rem;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
         #about p {
             font-size: 1.2rem;
-            color: #666;
+            color: #2c3e50;
             max-width: 800px;
             margin: 0 auto;
         }
 
+        /* Education Section */
         .education-timeline {
             position: relative;
             padding: 2rem 0;
@@ -187,28 +219,30 @@
 
         .education-item {
             background-color: #fff;
-            padding: 1.5rem;
-            border-radius: 10px;
+            padding: 1.8rem;
+            border-radius: 12px;
             margin-bottom: 2rem;
             position: relative;
             transition: transform 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
         }
 
         .education-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
         }
 
         .education-item h3 {
-            color: #333;
-            font-size: 1.5rem;
+            color: #2c3e50;
+            font-size: 1.6rem;
             margin-bottom: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .education-item p {
-            color: #666;
+            color: #2c3e50;
         }
 
+        /* Projects Section */
         .projects-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -217,30 +251,32 @@
 
         .project-card {
             background-color: #fff;
-            border-radius: 10px;
-            padding: 1.5rem;
+            border-radius: 12px;
+            padding: 1.8rem;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #ff4d4d;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px) rotate(1deg);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
 
         .project-card h3 {
-            color: #333;
-            font-size: 1.5rem;
+            color: #2c3e50;
+            font-size: 1.6rem;
             margin-bottom: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .project-details {
             display: none;
             margin-top: 1rem;
-            color: #666;
+            color: #2c3e50;
         }
 
         .project-details p {
@@ -250,13 +286,15 @@
         .project-details a {
             color: #ff4d4d;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .project-details a:hover {
             text-decoration: underline;
         }
 
+        /* Skills Section */
         .skills-container {
             display: flex;
             justify-content: space-between;
@@ -269,38 +307,41 @@
         }
 
         .skills-column h3 {
-            color: #333;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            color: #2c3e50;
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
             text-align: center;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .skill-card {
             background-color: #fff;
-            border-radius: 8px;
-            padding: 1rem;
+            border-radius: 10px;
+            padding: 1.2rem;
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 1rem;
             transition: transform 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
         }
 
         .skill-card:hover {
-            transform: translateX(5px);
+            transform: translateX(8px);
         }
 
         .skill-card i {
             color: #ff4d4d;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
         }
 
         .skill-card span {
             font-size: 1.1rem;
-            color: #333;
+            color: #2c3e50;
+            font-family: 'Montserrat', sans-serif;
         }
 
+        /* Certifications Section */
         .certifications-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -309,11 +350,11 @@
 
         .certification-card {
             background-color: #fff;
-            padding: 1.5rem;
-            border-radius: 10px;
+            padding: 1.8rem;
+            border-radius: 12px;
             text-align: center;
             transition: transform 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
         }
 
         .certification-card:hover {
@@ -322,10 +363,11 @@
 
         .certification-card i {
             color: #ff4d4d;
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
         }
 
+        /* Achievements Section */
         .achievements-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -334,11 +376,11 @@
 
         .achievement-card {
             background-color: #fff;
-            padding: 1.5rem;
-            border-radius: 10px;
+            padding: 1.8rem;
+            border-radius: 12px;
             text-align: center;
             transition: transform 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
         }
 
         .achievement-card:hover {
@@ -347,10 +389,11 @@
 
         .achievement-card i {
             color: #ff4d4d;
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
         }
 
+        /* Contact Section */
         .contact-info {
             text-align: center;
             margin-bottom: 2rem;
@@ -359,11 +402,13 @@
         .contact-info p {
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
+            color: #2c3e50;
         }
 
         .contact-info a {
             color: #ff4d4d;
             text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .contact-info a:hover {
@@ -372,29 +417,38 @@
 
         .contact-form {
             background-color: #fff;
-            padding: 2rem;
-            border-radius: 10px;
+            padding: 2.5rem;
+            border-radius: 12px;
             max-width: 600px;
             margin: 0 auto;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
         .contact-form label {
             display: block;
             margin-bottom: 0.5rem;
-            color: #333;
+            color: #2c3e50;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
+            padding: 0.9rem;
+            margin-bottom: 1.2rem;
             background-color: #f5f7fa;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            color: #333;
+            border: 1px solid #dfe4ea;
+            border-radius: 5px;
+            color: #2c3e50;
             font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #ff4d4d;
+            box-shadow: 0 0 8px rgba(255, 77, 77, 0.3);
+            outline: none;
         }
 
         .contact-form textarea {
@@ -405,42 +459,72 @@
         .contact-form button {
             background-color: #ff4d4d;
             color: #fff;
-            padding: 0.8rem 1.5rem;
+            padding: 0.9rem 1.8rem;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            position: relative;
         }
 
         .contact-form button:hover {
             background-color: #e03c3c;
+            transform: scale(1.05);
+        }
+
+        .contact-form button:active {
+            transform: scale(0.95);
         }
 
         .resume-btn {
             display: inline-block;
             background-color: #ff4d4d;
             color: #fff;
-            padding: 0.8rem 1.5rem;
-            border-radius: 4px;
+            padding: 0.9rem 1.8rem;
+            border-radius: 5px;
             text-decoration: none;
             margin-top: 1rem;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
             text-align: center;
-            display: block;
             max-width: 200px;
             margin: 1rem auto;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .resume-btn:hover {
             background-color: #e03c3c;
+            transform: scale(1.05);
         }
 
+        /* Footer */
         footer {
             background-color: #fff;
-            color: #666;
+            color: #2c3e50;
             text-align: center;
-            padding: 1.5rem;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.8rem;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero {
+                padding: 2rem 3rem;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-image img {
+                max-width: 350px;
+            }
+
+            section {
+                padding: 3rem 3rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -509,7 +593,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>I’m Nithin R</h1>
-            <p>Aspiring IT Professional, Problem Solver, and Innovator based in India, looking for opportunities to create impactful solutions.</p>
+            <p>Aspiring IT Undergraduate, Problem Solver, and Innovator based in India, looking for opportunities to create impactful solutions.</p>
             <a href="resume.pdf" download="Nithin_R_Resume.pdf" class="download-btn">Download CV</a>
         </div>
         <div class="hero-image">
@@ -683,7 +767,7 @@
             </div>
             <div class="certification-card">
                 <i class="fas fa-certificate"></i>
-                <p>SQL (Advanced) - <em>HackerRank</em></p>
+                <p>SQL (Intermediate) - <em>HackerRank</em></p>
             </div>
         </div>
     </section>
@@ -695,10 +779,6 @@
             <div class="achievement-card">
                 <i class="fas fa-trophy"></i>
                 <p><strong>Rajaprushkar Awardee - Scouts and Guides:</strong> Recognized for leadership and community service.</p>
-            </div>
-            <div class="achievement-card">
-                <i class="fas fa-trophy"></i>
-                <p><strong>Published Research Paper:</strong> Authored a paper on "A Novel Image Steganography Technique Using Combined Chaotic Maps, DNA Based Cryptography, and Adaptive Embedding for Enhanced Security."</p>
             </div>
             <div class="achievement-card">
                 <i class="fas fa-trophy"></i>
