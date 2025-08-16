@@ -4,28 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nithin R | Portfolio</title>
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #ff4d4d;
+            --primary-hover-color: #e03c3c;
+            --secondary-color: #2c3e50;
+            --background-color: #f5f7fa;
+            --surface-color: #fff;
+            --border-color: #dfe4ea;
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Roboto', sans-serif;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
+            font-family: var(--font-secondary);
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: #f5f7fa;
-            color: #2c3e50;
+            background-color: var(--background-color);
+            color: var(--secondary-color);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         /* Navigation Bar */
         nav {
-            background-color: #fff;
+            background-color: var(--surface-color);
             padding: 1.5rem 2rem;
             display: flex;
             justify-content: center;
@@ -33,21 +46,21 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .nav-links a {
-            color: #2c3e50;
+            color: var(--secondary-color);
             text-decoration: none;
             margin: 0 1.2rem;
             font-size: 1.1rem;
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-primary);
             text-transform: uppercase;
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: #ff4d4d;
+            color: var(--primary-color);
             transform: translateY(-2px);
         }
 
@@ -73,9 +86,9 @@
 
         .hero-content h1 {
             font-size: 3.8rem;
-            color: #2c3e50;
+            color: var(--secondary-color);
             margin-bottom: 1rem;
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-primary);
             line-height: 1.2;
         }
 
@@ -83,29 +96,29 @@
             content: '— HELLO';
             display: block;
             font-size: 1.3rem;
-            color: #ff4d4d;
+            color: var(--primary-color);
             margin-bottom: 0.5rem;
         }
 
         .hero-content p {
             font-size: 1.2rem;
-            color: #2c3e50;
+            color: var(--secondary-color);
             margin-bottom: 2rem;
         }
 
-        .hero-content .download-btn {
-            background-color: #ff4d4d;
-            color: #fff;
+        .download-btn {
+            background-color: var(--primary-color);
+            color: var(--surface-color);
             padding: 0.9rem 2.2rem;
             border-radius: 5px;
             text-decoration: none;
             font-size: 1.1rem;
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-primary);
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .hero-content .download-btn:hover {
-            background-color: #e03c3c;
+        .download-btn:hover {
+            background-color: var(--primary-hover-color);
             transform: scale(1.05);
         }
 
@@ -124,16 +137,17 @@
             display: flex;
             flex-direction: column;
             gap: 1.2rem;
+            z-index: 100;
         }
 
         .social-icons a {
-            color: #2c3e50;
+            color: var(--secondary-color);
             font-size: 1.6rem;
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .social-icons a:hover {
-            color: #ff4d4d;
+            color: var(--primary-color);
             transform: scale(1.2);
         }
 
@@ -143,9 +157,9 @@
             bottom: 2rem;
             right: 2rem;
             writing-mode: vertical-rl;
-            color: #2c3e50;
+            color: var(--secondary-color);
             font-size: 0.9rem;
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-primary);
             text-transform: uppercase;
             animation: pulse 2s infinite;
         }
@@ -155,7 +169,7 @@
             display: block;
             width: 2px;
             height: 35px;
-            background-color: #ff4d4d;
+            background-color: var(--primary-color);
             margin-top: 0.5rem;
             margin-left: auto;
             margin-right: auto;
@@ -168,19 +182,26 @@
         }
 
         /* Section Styling */
+        main {
+            display: block;
+        }
+        
         section {
             padding: 5rem 5rem;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        section:not(.hero){
             animation: fadeIn 1s ease-out;
         }
 
         section h2 {
             font-size: 2.8rem;
-            color: #2c3e50;
+            color: var(--secondary-color);
             margin-bottom: 2.5rem;
             text-align: center;
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-primary);
             position: relative;
         }
 
@@ -188,16 +209,23 @@
             content: '';
             width: 80px;
             height: 5px;
-            background-color: #ff4d4d;
+            background-color: var(--primary-color);
             position: absolute;
             bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
         }
+        
+        .card {
+            background-color: var(--surface-color);
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
         /* About Section */
         #about {
-            background-color: #fff;
+            background-color: var(--surface-color);
             border-radius: 15px;
             padding: 3.5rem;
             text-align: center;
@@ -206,7 +234,7 @@
 
         #about p {
             font-size: 1.2rem;
-            color: #2c3e50;
+            color: var(--secondary-color);
             max-width: 800px;
             margin: 0 auto;
         }
@@ -218,7 +246,7 @@
         }
 
         .education-item {
-            background-color: #fff;
+            background-color: var(--surface-color);
             padding: 1.8rem;
             border-radius: 12px;
             margin-bottom: 2rem;
@@ -232,15 +260,50 @@
         }
 
         .education-item h3 {
-            color: #2c3e50;
+            color: var(--secondary-color);
             font-size: 1.6rem;
             margin-bottom: 0.5rem;
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-primary);
         }
 
         .education-item p {
-            color: #2c3e50;
+            color: var(--secondary-color);
         }
+
+        /* Internship Section */
+        .internship-item {
+            padding: 1.8rem;
+            text-align: center;
+        }
+        
+        .internship-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .internship-item h3 {
+            color: var(--secondary-color);
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-primary);
+        }
+
+        .internship-item p {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .internship-item ul {
+            list-style-position: inside;
+            text-align: left;
+            max-width: 700px;
+            margin: 0 auto;
+            padding-left: 1rem;
+        }
+
+        .internship-item ul li {
+            margin-bottom: 0.5rem;
+        }
+
 
         /* Projects Section */
         .projects-container {
@@ -250,7 +313,7 @@
         }
 
         .project-card {
-            background-color: #fff;
+            background-color: var(--surface-color);
             border-radius: 12px;
             padding: 1.8rem;
             cursor: pointer;
@@ -258,25 +321,27 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-            border-left: 4px solid #ff4d4d;
+            border-left: 4px solid var(--primary-color);
         }
 
-        .project-card:hover {
+        .project-card:hover,
+        .project-card:focus-visible {
             transform: translateY(-10px) rotate(1deg);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            outline: none;
         }
 
         .project-card h3 {
-            color: #2c3e50;
+            color: var(--secondary-color);
             font-size: 1.6rem;
             margin-bottom: 0.5rem;
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-primary);
         }
 
         .project-details {
             display: none;
             margin-top: 1rem;
-            color: #2c3e50;
+            color: var(--secondary-color);
         }
 
         .project-details p {
@@ -284,10 +349,10 @@
         }
 
         .project-details a {
-            color: #ff4d4d;
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: 600;
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-primary);
         }
 
         .project-details a:hover {
@@ -297,33 +362,31 @@
         /* Skills Section */
         .skills-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             gap: 2rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
         .skills-column {
             flex: 1;
+            min-width: 300px;
         }
 
         .skills-column h3 {
-            color: #2c3e50;
+            color: var(--secondary-color);
             font-size: 1.6rem;
             margin-bottom: 1.2rem;
             text-align: center;
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-primary);
         }
 
         .skill-card {
-            background-color: #fff;
-            border-radius: 10px;
             padding: 1.2rem;
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 1rem;
-            transition: transform 0.3s ease;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
         }
 
         .skill-card:hover {
@@ -331,51 +394,29 @@
         }
 
         .skill-card i {
-            color: #ff4d4d;
+            color: var(--primary-color);
             font-size: 1.6rem;
+            width: 25px; /* Fixed width for alignment */
+            text-align: center;
         }
 
         .skill-card span {
             font-size: 1.1rem;
-            color: #2c3e50;
-            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary-color);
+            font-family: var(--font-primary);
         }
 
-        /* Certifications Section */
-        .certifications-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .certification-card {
-            background-color: #fff;
-            padding: 1.8rem;
-            border-radius: 12px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-        }
-
-        .certification-card:hover {
-            transform: scale(1.05);
-        }
-
-        .certification-card i {
-            color: #ff4d4d;
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Achievements Section */
+        /* Certifications & Achievements Section */
+        .certifications-list,
         .achievements-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
 
+        .certification-card,
         .achievement-card {
-            background-color: #fff;
+            background-color: var(--surface-color);
             padding: 1.8rem;
             border-radius: 12px;
             text-align: center;
@@ -383,12 +424,14 @@
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
         }
 
+        .certification-card:hover,
         .achievement-card:hover {
             transform: scale(1.05);
         }
 
+        .certification-card i,
         .achievement-card i {
-            color: #ff4d4d;
+            color: var(--primary-color);
             font-size: 2.2rem;
             margin-bottom: 1rem;
         }
@@ -402,13 +445,13 @@
         .contact-info p {
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
-            color: #2c3e50;
+            color: var(--secondary-color);
         }
 
         .contact-info a {
-            color: #ff4d4d;
+            color: var(--primary-color);
             text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-primary);
         }
 
         .contact-info a:hover {
@@ -416,7 +459,7 @@
         }
 
         .contact-form {
-            background-color: #fff;
+            background-color: var(--surface-color);
             padding: 2.5rem;
             border-radius: 12px;
             max-width: 600px;
@@ -427,8 +470,8 @@
         .contact-form label {
             display: block;
             margin-bottom: 0.5rem;
-            color: #2c3e50;
-            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary-color);
+            font-family: var(--font-primary);
         }
 
         .contact-form input,
@@ -436,17 +479,17 @@
             width: 100%;
             padding: 0.9rem;
             margin-bottom: 1.2rem;
-            background-color: #f5f7fa;
-            border: 1px solid #dfe4ea;
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
             border-radius: 5px;
-            color: #2c3e50;
+            color: var(--secondary-color);
             font-size: 1rem;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .contact-form input:focus,
         .contact-form textarea:focus {
-            border-color: #ff4d4d;
+            border-color: var(--primary-color);
             box-shadow: 0 0 8px rgba(255, 77, 77, 0.3);
             outline: none;
         }
@@ -457,20 +500,20 @@
         }
 
         .contact-form button {
-            background-color: #ff4d4d;
-            color: #fff;
+            background-color: var(--primary-color);
+            color: var(--surface-color);
             padding: 0.9rem 1.8rem;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-primary);
             font-size: 1.1rem;
             transition: background-color 0.3s ease, transform 0.3s ease;
             position: relative;
         }
 
         .contact-form button:hover {
-            background-color: #e03c3c;
+            background-color: var(--primary-hover-color);
             transform: scale(1.05);
         }
 
@@ -478,36 +521,47 @@
             transform: scale(0.95);
         }
 
-        .resume-btn {
-            display: inline-block;
-            background-color: #ff4d4d;
-            color: #fff;
-            padding: 0.9rem 1.8rem;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 1rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            text-align: center;
-            max-width: 200px;
-            margin: 1rem auto;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .resume-btn:hover {
-            background-color: #e03c3c;
-            transform: scale(1.05);
-        }
-
         /* Footer */
         footer {
-            background-color: #fff;
-            color: #2c3e50;
+            background-color: var(--surface-color);
+            color: var(--secondary-color);
             text-align: center;
             padding: 1.8rem;
             box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-primary);
         }
 
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--primary-color);
+            color: var(--surface-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: opacity 0.3s, transform 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            z-index: 999;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-hover-color);
+        }
+        
         /* Responsive Design */
         @media (max-width: 1024px) {
             .hero {
@@ -530,8 +584,24 @@
         @media (max-width: 768px) {
             .hero {
                 flex-direction: column;
-                padding: 2rem;
+                padding: 4rem 2rem 2rem 2rem;
                 text-align: center;
+            }
+            
+            nav {
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            
+            .nav-links a {
+                margin: 0 0.5rem;
+                font-size: 0.85rem;
             }
 
             .hero-content {
@@ -547,40 +617,44 @@
                 max-width: 300px;
             }
 
-            .nav-links a {
-                margin: 0 0.5rem;
-                font-size: 0.9rem;
-            }
-
             .social-icons {
+                position: relative;
                 flex-direction: row;
-                bottom: 1rem;
-                left: 50%;
-                transform: translateX(-50%);
+                justify-content: center;
+                width: 100%;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                margin-top: 2rem;
+                padding-bottom: 1rem;
             }
 
             .scroll-down {
                 display: none;
             }
+            
+            .back-to-top {
+                right: 1rem;
+                bottom: 1rem;
+            }
 
             .projects-container {
                 grid-template-columns: 1fr;
             }
-
+            
             .skills-container {
                 flex-direction: column;
-                gap: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
     <nav>
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#education">Education</a>
+            <a href="#internship">Internship</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#certifications">Certifications</a>
@@ -589,250 +663,240 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Front Page) -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>I’m Nithin R</h1>
-            <p>Aspiring IT Undergraduate, Problem Solver, and Innovator based in India, looking for opportunities to create impactful solutions.</p>
-            <a href="resume.pdf" download="Resume.pdf" class="download-btn">Download CV</a>
-        </div>
-        <div class="hero-image">
-            <img src="nithin.jpg" alt="Nithin R">
-        </div>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>I’m Nithin R</h1>
+                <p>Aspiring IT Undergraduate, Problem Solver, and Innovator based in India, looking for opportunities to create impactful solutions.</p>
+                <a href="resume.pdf" download="Nithin_R_Resume.pdf" class="download-btn">Download CV</a>
+            </div>
+            <div class="hero-image">
+                <img src="nithin.jpg" alt="A professional headshot of Nithin R">
+            </div>
+        </section>
 
-    <!-- Social Icons -->
-    <div class="social-icons">
-        <a href="https://linkedin.com/in/nithin-r-a568a0227" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/Nithin-182004" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="mailto:nithinr182004@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a motivated and enthusiastic B.Tech graduate in Information Technology from SASTRA Deemed University, with a passion for leveraging technology to solve real-world challenges. My expertise spans core programming, data analytics, and secure system design, complemented by hands-on experience with tools like Python, Power BI, and Git. I thrive in dynamic, collaborative environments where I can contribute to impactful projects, continuously learn, and drive organizational success.</p>
+        </section>
 
-    <!-- Scroll Down Indicator -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <h3>B.Tech - Information Technology</h3>
+                    <p><em>SASTRA Deemed University, Thanjavur</em> | 2021 - 2025</p>
+                </div>
+                <div class="education-item">
+                    <h3>Class XII</h3>
+                    <p><em>Sacred Heart Matric Higher Sec School, Chennai</em> | 2021</p>
+                </div>
+                <div class="education-item">
+                    <h3>Class X</h3>
+                    <p><em>Sacred Heart Matric Higher Sec School, Chennai</em> | 2019</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="internship">
+            <h2>Internship</h2>
+            <div class="card internship-item">
+                <h3>AI R&D Intern</h3>
+                <p><em>Stradegi Solutions, Chennai</em> | June 2025 - Present</p>
+                <ul>
+                    <li>Developed a solution combining metadata analysis and a CNN model, achieving 93% accuracy in fake image detection.</li>
+                    <li>Collaborated on creating and refining GPT prompts, enhancing system performance.</li>
+                    <li>Identified and addressed application red flags, improving overall application reliability.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-card" role="button" tabindex="0">
+                    <h3>Image Steganography</h3>
+                    <div class="project-details">
+                        <p>Engineered a Python-based steganography tool leveraging the Bald Eagle Search algorithm for optimal pixel selection and chaotic encryption for enhanced security. Achieved an 85% accuracy rate in secure data transmission.</p>
+                        <a href="https://github.com/Nithin-182004/Steganography-on-Bald-Eagle-Search-and-Chaotic-Encryption" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card" role="button" tabindex="0">
+                    <h3>Adidas Sales Analysis</h3>
+                    <div class="project-details">
+                        <p>Utilized Power BI to dissect sales data, uncovering key trends and performance gaps through interactive dashboards. Delivered actionable insights that optimized decision-making.</p>
+                        <a href="https://github.com/Nithin-182004/Adidas-Sales-Report-using-Power-BI" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card" role="button" tabindex="0">
+                    <h3>Product Price Scraping</h3>
+                    <div class="project-details">
+                        <p>Built a Python-based web scraping tool using Beautiful Soup to extract pricing data from e-commerce platforms. Analyzed market trends to provide cost-saving recommendations.</p>
+                        <a href="https://github.com/Nithin-182004/Product-price-analysis" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card" role="button" tabindex="0">
+                    <h3>Carbon Footprint Predictor</h3>
+                    <div class="project-details">
+                        <p>Developed a machine learning model to predict carbon footprints based on user inputs, using Python and Scikit-learn. Provided actionable insights for reducing environmental impact.</p>
+                        <a href="https://github.com/Nithin-182004/CarbonFootprintPredictor" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card" role="button" tabindex="0">
+                    <h3>Calorie Burn Prediction</h3>
+                    <div class="project-details">
+                        <p>Created a predictive model using Python and machine learning libraries to estimate calorie burn based on exercise and user data, enhancing fitness tracking accuracy.</p>
+                        <a href="https://github.com/Nithin-182004/Calorie-Burn-Prediction" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card" role="button" tabindex="0">
+                    <h3>Solar Panel Efficiency Prediction</h3>
+                    <div class="project-details">
+                        <p>Developed a machine learning model using Python to predict solar panel efficiency based on various environmental parameters, promoting sustainable energy optimization.</p>
+                        <a href="https://github.com/Nithin-182004/Solar-Panel-Efficiency-Prediction" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skills-column">
+                    <h3>Technical Skills</h3>
+                    <div class="card skill-card"><i class="fab fa-python" aria-hidden="true"></i><span>Python</span></div>
+                    <div class="card skill-card"><i class="fab fa-git-alt" aria-hidden="true"></i><span>Git</span></div>
+                    <div class="card skill-card"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span></div>
+                    <div class="card skill-card"><i class="fas fa-database" aria-hidden="true"></i><span>MySQL</span></div>
+                    <div class="card skill-card"><i class="fas fa-brain" aria-hidden="true"></i><span>scikit-learn</span></div>
+                    <div class="card skill-card"><i class="fas fa-table" aria-hidden="true"></i><span>Pandas</span></div>
+                    <div class="card skill-card"><i class="fas fa-table" aria-hidden="true"></i><span>NumPy</span></div>
+                    <div class="card skill-card"><i class="fas fa-brain" aria-hidden="true"></i><span>TensorFlow</span></div>
+                    <div class="card skill-card"><i class="fas fa-brain" aria-hidden="true"></i><span>CNN</span></div>
+                    <div class="card skill-card"><i class="fas fa-robot" aria-hidden="true"></i><span>Prompt Engineering</span></div>
+                </div>
+                <div class="skills-column">
+                    <h3>Soft Skills</h3>
+                    <div class="card skill-card"><i class="fas fa-sync-alt" aria-hidden="true"></i><span>Adaptability</span></div>
+                    <div class="card skill-card"><i class="fas fa-lightbulb" aria-hidden="true"></i><span>Problem-Solving</span></div>
+                    <div class="card skill-card"><i class="fas fa-heart" aria-hidden="true"></i><span>Emotional Intelligence</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="certifications-list">
+                <div class="certification-card">
+                    <i class="fas fa-certificate" aria-hidden="true"></i>
+                    <p>Python Essentials 1 - <em>Cisco Networking Academy</em></p>
+                </div>
+                <div class="certification-card">
+                    <i class="fas fa-certificate" aria-hidden="true"></i>
+                    <p>Data Analytics Essentials - <em>Cisco Networking Academy</em></p>
+                </div>
+                <div class="certification-card">
+                    <i class="fas fa-certificate" aria-hidden="true"></i>
+                    <p>SQL (Intermediate) - <em>HackerRank</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <div class="achievements-list">
+                <div class="achievement-card">
+                    <i class="fas fa-trophy" aria-hidden="true"></i>
+                    <p><strong>Rajaprushkar Awardee - Scouts and Guides:</strong> Recognized for leadership and community service.</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-trophy" aria-hidden="true"></i>
+                    <p>Completed multiple impactful projects showcasing technical innovation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:nithinr182004@gmail.com">nithinr182004@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/nithin-r-a568a0227" target="_blank" rel="noopener noreferrer">Nithin R</a></p>
+                <p>GitHub: <a href="https://github.com/Nithin-182004" target="_blank" rel="noopener noreferrer">Nithin-182004</a></p>
+            </div>
+            <div class="contact-form">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="_replyto" placeholder="Your Email" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <input type="hidden" name="_subject" value="New Contact Form Submission">
+                    <input type="text" name="_gotcha" style="display:none">
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <aside class="social-icons">
+        <a href="https://linkedin.com/in/nithin-r-a568a0227" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://github.com/Nithin-182004" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="mailto:nithinr182004@gmail.com" aria-label="Send an Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+    </aside>
+
     <div class="scroll-down">Scroll Down</div>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a motivated and enthusiastic B.Tech graduate in Information Technology from SASTRA Deemed University, with a passion for leveraging technology to solve real-world challenges. My expertise spans core programming, data analytics, and secure system design, complemented by hands-on experience with tools like Python, Power BI, and Git. I thrive in dynamic, collaborative environments where I can contribute to impactful projects, continuously learn, and drive organizational success.</p>
-    </section>
+    <a href="#home" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
 
-    <!-- Education Section -->
-    <section id="education">
-        <h2>Education</h2>
-        <div class="education-timeline">
-            <div class="education-item">
-                <h3>B.Tech - Information Technology</h3>
-                <p><em>SASTRA Deemed University, Thanjavur</em> | 2021 - 2025</p>
-            </div>
-            <div class="education-item">
-                <h3>Class XII</h3>
-                <p><em>Sacred Heart Matric Higher Sec School, Chennai</em> | 2021</p>
-            </div>
-            <div class="education-item">
-                <h3>Class X</h3>
-                <p><em>Sacred Heart Matric Higher Sec School, Chennai</em> | 2019</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects-container">
-            <div class="project-card" onclick="toggleDetails(this)">
-                <h3>Image Steganography</h3>
-                <div class="project-details">
-                    <p>Engineered a Python-based steganography tool leveraging the Bald Eagle Search algorithm for optimal pixel selection and chaotic encryption for enhanced security. Achieved an 85% accuracy rate in secure data transmission.</p>
-                    <a href="https://github.com/Nithin-182004/Steganography-on-Bald-Eagle-Search-and-Chaotic-Encryption" target="_blank">GitHub Link</a>
-                </div>
-            </div>
-            <div class="project-card" onclick="toggleDetails(this)">
-                <h3>Adidas Sales Analysis</h3>
-                <div class="project-details">
-                    <p>Utilized Power BI to dissect sales data, uncovering key trends and performance gaps through interactive dashboards. Delivered actionable insights that optimized decision-making.</p>
-                    <a href="https://github.com/Nithin-182004/Adidas-Sales-Report-using-Power-BI" target="_blank">GitHub Link</a>
-                </div>
-            </div>
-            <div class="project-card" onclick="toggleDetails(this)">
-                <h3>Product Price Scraping</h3>
-                <div class="project-details">
-                    <p>Built a Python-based web scraping tool using Beautiful Soup to extract pricing data from e-commerce platforms. Analyzed market trends to provide cost-saving recommendations.</p>
-                    <a href="https://github.com/Nithin-182004/Product-price-analysis" target="_blank">GitHub Link</a>
-                </div>
-            </div>
-            <div class="project-card" onclick="toggleDetails(this)">
-                <h3>Carbon Footprint Predictor</h3>
-                <div class="project-details">
-                    <p>Developed a machine learning model to predict carbon footprints based on user inputs, using Python and Scikit-learn. Provided actionable insights for reducing environmental impact.</p>
-                    <a href="https://github.com/Nithin-182004/CarbonFootprintPredictor" target="_blank">GitHub Link</a>
-                </div>
-            </div>
-            <div class="project-card" onclick="toggleDetails(this)">
-                <h3>Calorie Burn Prediction</h3>
-                <div class="project-details">
-                    <p>Created a predictive model using Python and machine learning libraries to estimate calorie burn based on exercise and user data, enhancing fitness tracking accuracy.</p>
-                    <a href="https://github.com/Nithin-182004/Calorie-Burn-Prediction" target="_blank">GitHub Link</a>
-                </div>
-            </div>
-            <div class="project-card" onclick="toggleDetails(this)">
-                <h3>Solar Panel Efficiency Prediction</h3>
-                <div class="project-details">
-                    <p>Developed a machine learning model using Python to predict solar panel efficiency based on various environmental parameters, promoting sustainable energy optimization.</p>
-                    <a href="https://github.com/Nithin-182004/Solar-Panel-Efficiency-Prediction" target="_blank">GitHub Link</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-container">
-            <!-- Technical Skills -->
-            <div class="skills-column">
-                <h3>Technical Skills</h3>
-                <div class="skill-card">
-                    <i class="fab fa-python"></i>
-                    <span>Python</span>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    <span>SQL</span>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    <span>C++</span>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-chart-bar"></i>
-                    <span>Power BI</span>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <span>HTML</span>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-css3-alt"></i>
-                    <span>CSS</span>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    <span>MySQL</span>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-brain"></i>
-                    <span>TensorFlow</span>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-brain"></i>
-                    <span>Scikit-learn</span>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-table"></i>
-                    <span>Pandas</span>
-                </div>
-            </div>
-
-            <!-- Soft Skills -->
-            <div class="skills-column">
-                <h3>Soft Skills</h3>
-                <div class="skill-card">
-                    <i class="fas fa-clock"></i>
-                    <span>Time Management</span>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-users"></i>
-                    <span>Communication & Teamwork</span>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-comments"></i>
-                    <span>Clarity in Explanation</span>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <span>Problem-Solving</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications">
-        <h2>Certifications</h2>
-        <div class="certifications-list">
-            <div class="certification-card">
-                <i class="fas fa-certificate"></i>
-                <p>Python Essentials 1 - <em>Cisco Networking Academy</em></p>
-            </div>
-            <div class="certification-card">
-                <i class="fas fa-certificate"></i>
-                <p>Data Analytics Essentials - <em>Cisco Networking Academy</em></p>
-            </div>
-            <div class="certification-card">
-                <i class="fas fa-certificate"></i>
-                <p>SQL (Intermediate) - <em>HackerRank</em></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Achievements Section -->
-    <section id="achievements">
-        <h2>Achievements</h2>
-        <div class="achievements-list">
-            <div class="achievement-card">
-                <i class="fas fa-trophy"></i>
-                <p><strong>Rajaprushkar Awardee - Scouts and Guides:</strong> Recognized for leadership and community service.</p>
-            </div>
-            <div class="achievement-card">
-                <i class="fas fa-trophy"></i>
-                <p>Completed multiple impactful projects showcasing technical innovation.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-info">
-            <p>Email: <a href="mailto:nithinr182004@gmail.com">nithinr182004@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/nithin-r-a568a0227" target="_blank">Nithin R</a></p>
-            <p>GitHub: <a href="https://github.com/Nithin-182004" target="_blank">Nithin-182004</a></p>
-        </div>
-        <div class="contact-form">
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="_replyto" placeholder="Your Email" required>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                <input type="hidden" name="_subject" value="New Contact Form Submission">
-                <input type="text" name="_gotcha" style="display:none">
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <p>© 2025 Nithin R. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Project Card Interactivity -->
     <script>
-        function toggleDetails(card) {
-            const details = card.querySelector('.project-details');
-            if (details.style.display === 'block') {
-                details.style.display = 'none';
-            } else {
+        document.addEventListener('DOMContentLoaded', () => {
+            // Project Card Interactivity
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            const toggleDetails = (card) => {
+                const details = card.querySelector('.project-details');
+                const isVisible = details.style.display === 'block';
+
+                // Close all other details
                 document.querySelectorAll('.project-details').forEach(detail => {
                     detail.style.display = 'none';
                 });
-                details.style.display = 'block';
-            }
-        }
+
+                // Toggle the clicked one
+                if (!isVisible) {
+                    details.style.display = 'block';
+                }
+            };
+
+            projectCards.forEach(card => {
+                card.addEventListener('click', () => toggleDetails(card));
+                card.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault(); // Prevent space from scrolling
+                        toggleDetails(card);
+                    }
+                });
+            });
+
+            // Back to Top Button Visibility
+            const backToTopButton = document.querySelector('.back-to-top');
+            const scrollIndicator = document.querySelector('.scroll-down');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add('visible');
+                    if(scrollIndicator) scrollIndicator.style.opacity = '0';
+                } else {
+                    backToTopButton.classList.remove('visible');
+                    if(scrollIndicator) scrollIndicator.style.opacity = '1';
+                }
+            });
+        });
     </script>
 </body>
 </html>
-
